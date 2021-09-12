@@ -22,12 +22,16 @@ def result():
         if request.form['radio'] == 'cityname':
             city_data = request.form['location']
             weather_request = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q={city_data}&appid={weather_api}')
-            if weather_request.ok:
+            if weather_request.ok: #no errors in the response
                 json_data = json.loads(weather_request.text)
                 return render_template('result.html', data=json_data)
 
-        if request.form['radio'] == 'zip':
-            pass
+        elif request.form['radio'] == 'zip':
+            city_data = request.form['location']
+            weather_request = requests.get(f'https://api.openweathermap.org/data/2.5/weather?zip={city_data},{country_code}&appid={weather_api}')
+            if weather_request.ok: #no errors in response
+                json_data = json.loads(weather_request.text)
+                return render_template('result.html', data=json_data)
 
 
 

@@ -1,18 +1,21 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<div>
+<div class="formclass">
   <form action="{{ url_for('result') }}" method="POST">
-    <label for="countryname">Country:</label>
-    <input type="text" name="countryname">
-    <label for="location">Enter location:</label>
-    <input type="text" name="location">
-
-    <input type="radio" name="radio" value="zip" checked>
-    <label for="zip">Zip code</label>
-    <input type="radio" name="radio" value="cityname">
-    <label for="cityname">City Name</label>
-
+    <div>
+      <label for="countryname">Country:</label>
+      <input type="text" name="countryname">
+    </div>
+    <div>
+      <label for="location">City:</label>
+      <input type="text" name="location">
+      
+      <input type="radio" name="radio" value="zip" checked>
+      <label for="zip">Zip code</label>
+      <input type="radio" name="radio" value="cityname">
+      <label for="cityname">City Name</label>
+    </div>
     <div>
       <input type="submit" value="submit">
     </div>
