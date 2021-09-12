@@ -3,7 +3,7 @@ import requests
 import json
 
 app = Flask(__name__)
-weather_api = '94f0413c98f83d8fc87048d9dc29b06c'
+weather_api = ''
 @app.route('/')
 def home():
     return render_template('home.html')
